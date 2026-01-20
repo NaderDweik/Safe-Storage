@@ -527,6 +527,3 @@ Built with inspiration from:
 - [TanStack Query](https://tanstack.com/query)
 - [VueUse](https://vueuse.org/)
 
----
-
-Made with :heavy_check_mark: for type-safe storage
