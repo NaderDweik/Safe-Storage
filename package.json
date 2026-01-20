@@ -1,6 +1,6 @@
 {
   "name": "store-guard",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A high-performance, framework-agnostic type-safe wrapper for browser storage with schema validation",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

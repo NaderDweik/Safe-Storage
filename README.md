@@ -20,7 +20,40 @@ console.log(user.name.toUpperCase()); // Crashes if name is undefined!
 
 ## The Solution
 
-Store Guard makes storage type-safe and validated. It catches errors before they happen.
+Store Guard makes storage type-safe and validated. Here's what you'll use:
+
+### Core API
+
+**Create a store:**
+```typescript
+import { createStore } from 'store-guard';
+
+const store = createStore({ key: 'user', schema: zodSchema });
+```
+
+**Store methods:**
+- `store.get()` - Get value from storage
+- `store.set(data)` - Save new value
+- `store.update(fn)` - Update using function
+- `store.remove()` - Delete value
+- `store.onUpdate(callback)` - Subscribe to changes
+- `store.has()` - Check if data exists
+
+**React Hook:**
+```typescript
+import { useSafeStorage } from 'store-guard/react';
+
+const [value, setValue, { remove, update, isLoading }] = useSafeStorage(options);
+```
+
+**Vue Composable:**
+```typescript
+import { useSafeStorage } from 'store-guard/vue';
+
+const { value, set, update, remove, isLoading } = useSafeStorage(options);
+```
+
+### Example
 
 ```typescript
 // Store Guard way - safe and reliable
@@ -198,7 +231,7 @@ dataStore.set({
 });
 ```
 
-## API Reference
+## Complete API Reference
 
 ### createStore(options)
 
@@ -232,6 +265,14 @@ const [value, setValue, { remove, update, isLoading }] = useSafeStorage(options)
 ```typescript
 const { value, set, update, remove, isLoading } = useSafeStorage(options);
 ```
+
+### Additional Utilities
+
+- `batchSet()`, `batchGet()`, `batchRemove()` - Batch operations
+- `cleanupStorage()` - Clean expired data
+- `getStorageInfo()` - Check storage quota
+- `createLZCompressor()` - Optional compression
+- `createWebCryptoEncryptor()` - Optional encryption
 
 ## Browser Support
 
