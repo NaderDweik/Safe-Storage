@@ -1,0 +1,120 @@
+{
+  "name": "safe-storage",
+  "version": "1.0.0",
+  "description": "A high-performance, framework-agnostic type-safe wrapper for browser storage with schema validation",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.mjs",
+      "require": "./dist/react.js"
+    },
+    "./vue": {
+      "types": "./dist/vue.d.ts",
+      "import": "./dist/vue.mjs",
+      "require": "./dist/vue.js"
+    },
+    "./svelte": {
+      "types": "./dist/svelte.d.ts",
+      "import": "./dist/svelte.mjs",
+      "require": "./dist/svelte.js"
+    },
+    "./adapters/indexeddb": {
+      "types": "./dist/adapters/indexeddb.d.ts",
+      "import": "./dist/adapters/indexeddb.mjs",
+      "require": "./dist/adapters/indexeddb.js"
+    },
+    "./adapters/react-native": {
+      "types": "./dist/adapters/react-native.d.ts",
+      "import": "./dist/adapters/react-native.mjs",
+      "require": "./dist/adapters/react-native.js"
+    },
+    "./devtools": {
+      "types": "./dist/devtools.d.ts",
+      "import": "./dist/devtools.mjs",
+      "require": "./dist/devtools.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "storage",
+    "localstorage",
+    "sessionstorage",
+    "indexeddb",
+    "type-safe",
+    "schema",
+    "validation",
+    "zod",
+    "valibot",
+    "react",
+    "vue",
+    "typescript"
+  ],
+  "author": "Nader D <nderdweik@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@react-native-async-storage/async-storage": ">=1.0.0",
+    "react": ">=16.8.0",
+    "svelte": ">=3.0.0",
+    "vue": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    },
+    "svelte": {
+      "optional": true
+    },
+    "@react-native-async-storage/async-storage": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/jsdom": "^27.0.0",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.45",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "happy-dom": "^20.3.4",
+    "jsdom": "^27.4.0",
+    "react": "^18.2.0",
+    "svelte": "^5.47.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.14",
+    "vite-node": "^0.34.7",
+    "vitest": "^0.34.6",
+    "vue": "^3.4.0",
+    "zod": "^4.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NaderDweik"
+  },
+  "bugs": {
+    "url": "https://github.com/NaderDweik"
+  },
+  "homepage": "https://github.com/NaderDweik"
+}
