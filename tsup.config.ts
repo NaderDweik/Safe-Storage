@@ -9,9 +9,15 @@ export default defineConfig([
     dts: true,
     clean: true,
     sourcemap: false, // Removed for smaller NPM package
-    minify: true,
+    minify: 'terser', // Use terser for smaller bundles
+    terserOptions: {
+      compress: {
+        passes: 2, // Multiple passes for better compression
+      },
+      mangle: true,
+    },
     treeshake: true,
-    splitting: true, // Enable code splitting for smaller chunks
+    splitting: true,
   },
   {
     entry: {
@@ -20,7 +26,11 @@ export default defineConfig([
     format: ['cjs', 'esm'],
     dts: true,
     sourcemap: false,
-    minify: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: { passes: 2 },
+      mangle: true,
+    },
     treeshake: true,
     external: ['react'],
     splitting: true,
@@ -32,7 +42,11 @@ export default defineConfig([
     format: ['cjs', 'esm'],
     dts: true,
     sourcemap: false,
-    minify: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: { passes: 2 },
+      mangle: true,
+    },
     treeshake: true,
     external: ['vue'],
     splitting: true,
@@ -44,7 +58,11 @@ export default defineConfig([
     format: ['cjs', 'esm'],
     dts: true,
     sourcemap: false,
-    minify: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: { passes: 2 },
+      mangle: true,
+    },
     treeshake: true,
     external: ['svelte', 'svelte/store'],
     splitting: true,
@@ -57,7 +75,11 @@ export default defineConfig([
     format: ['cjs', 'esm'],
     dts: true,
     sourcemap: false,
-    minify: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: { passes: 2 },
+      mangle: true,
+    },
     treeshake: true,
     splitting: true,
   },
@@ -68,7 +90,11 @@ export default defineConfig([
     format: ['cjs', 'esm'],
     dts: true,
     sourcemap: false,
-    minify: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: { passes: 2 },
+      mangle: true,
+    },
     treeshake: true,
     splitting: true,
   },

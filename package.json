@@ -1,6 +1,6 @@
 {
-  "name": "safe-storage",
-  "version": "1.0.0",
+  "name": "store-guard",
+  "version": "1.0.1",
   "description": "A high-performance, framework-agnostic type-safe wrapper for browser storage with schema validation",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -46,8 +46,13 @@
     "dist",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NaderDweik"
+  },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && npm run clean-dts",
+    "clean-dts": "find dist -name '*.d.mts' -delete",
     "dev": "tsup --watch",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
@@ -101,6 +106,7 @@
     "jsdom": "^27.4.0",
     "react": "^18.2.0",
     "svelte": "^5.47.1",
+    "terser": "^5.46.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
     "vite": "^4.5.14",
@@ -108,10 +114,6 @@
     "vitest": "^0.34.6",
     "vue": "^3.4.0",
     "zod": "^4.3.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/NaderDweik"
   },
   "bugs": {
     "url": "https://github.com/NaderDweik"
